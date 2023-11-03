@@ -10,54 +10,57 @@ import SwiftUI
 struct ContentView: View {
     @State var count: Int = 0
     var body: some View {
-        VStack {
-            Text("\(count)")
-            Spacer().frame(height: 20)
-            HStack {
-                Button {
-                    decrease()
-                } label: {
-                    Text("decrease")
-                        .padding()
-                        .foregroundColor(.black)
-                        .background(
-                            RoundedRectangle(
-                                cornerRadius: 25,
-                                style: .continuous
+        NavigationStack {
+            VStack {
+                Text("\(count)")
+                Spacer().frame(height: 20)
+                HStack {
+                    Button {
+                        decrease()
+                    } label: {
+                        Text("decrease")
+                            .padding()
+                            .foregroundColor(.black)
+                            .background(
+                                RoundedRectangle(
+                                    cornerRadius: 25,
+                                    style: .continuous
+                                )
                             )
-                        )
-                        .overlay {
-                            
-                            RoundedRectangle(
-                                cornerRadius: 25,
-                                style: .continuous
+                            .overlay {
+                                
+                                RoundedRectangle(
+                                    cornerRadius: 25,
+                                    style: .continuous
+                                )
+                                .stroke(.teal, lineWidth: 2)
+                            }
+                    }
+                    
+                    Button {
+                        increase()
+                    } label: {
+                        Text("increase")
+                            .padding()
+                            .foregroundColor(.black)
+                            .background(
+                                RoundedRectangle(
+                                    cornerRadius: 25,
+                                    style: .continuous
+                                )
                             )
-                            .stroke(.teal, lineWidth: 2)
-                        }
-                }
-                
-                Button {
-                    increase()
-                } label: {
-                    Text("decrease")
-                        .padding()
-                        .foregroundColor(.black)
-                        .background(
-                            RoundedRectangle(
-                                cornerRadius: 25,
-                                style: .continuous
-                            )
-                        )
-                        .overlay {
-                            
-                            RoundedRectangle(
-                                cornerRadius: 25,
-                                style: .continuous
-                            )
-                            .stroke(.teal, lineWidth: 2)
-                        }
+                            .overlay {
+                                
+                                RoundedRectangle(
+                                    cornerRadius: 25,
+                                    style: .continuous
+                                )
+                                .stroke(.teal, lineWidth: 2)
+                            }
+                    }
                 }
             }
+            .navigationTitle("Counter")
         }
     }
     
