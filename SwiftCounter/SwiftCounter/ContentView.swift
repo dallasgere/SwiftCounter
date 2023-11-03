@@ -17,25 +17,26 @@ struct ContentView: View {
                 HStack {
                     Button {
                         decrease()
-                    } label: {
-                        Text("decrease")
-                            .padding()
-                            .foregroundColor(.black)
-                            .background(
-                                RoundedRectangle(
-                                    cornerRadius: 25,
-                                    style: .continuous
-                                )
-                            )
-                            .overlay {
-                                
-                                RoundedRectangle(
-                                    cornerRadius: 25,
-                                    style: .continuous
-                                )
-                                .stroke(.teal, lineWidth: 2)
-                            }
                     }
+                label: {
+                    Text("decrease")
+                        .padding()
+                        .foregroundColor(.black)
+                        .background(
+                            RoundedRectangle(
+                                cornerRadius: 25,
+                                style: .continuous
+                            )
+                        )
+                        .overlay {
+                            
+                            RoundedRectangle(
+                                cornerRadius: 25,
+                                style: .continuous
+                            )
+                            .stroke(.teal, lineWidth: 2)
+                        }
+                }
                     
                     Button {
                         increase()
